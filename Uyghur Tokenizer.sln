@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UyghurTokenizer", "UyghurTokenizer\UyghurTokenizer.csproj", "{3D681C2B-24CD-4994-A72D-1CE8DED47979}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uyghurche Soz Suzgu", "Uyghurche Soz Suzgu\Uyghurche Soz Suzgu.csproj", "{41ADA54E-4F96-4228-A2E7-7A570160215D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3D681C2B-24CD-4994-A72D-1CE8DED47979}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D681C2B-24CD-4994-A72D-1CE8DED47979}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D681C2B-24CD-4994-A72D-1CE8DED47979}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D681C2B-24CD-4994-A72D-1CE8DED47979}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41ADA54E-4F96-4228-A2E7-7A570160215D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41ADA54E-4F96-4228-A2E7-7A570160215D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41ADA54E-4F96-4228-A2E7-7A570160215D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41ADA54E-4F96-4228-A2E7-7A570160215D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
