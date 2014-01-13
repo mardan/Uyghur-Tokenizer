@@ -8,6 +8,8 @@ A simple word level tokenizer Libary and Windows tool for Uyghur language | ئۇ
 -------------
 Usage:
 
+Add UyghurTokenizer.dll as a reference in your .Net project.            
+
             string textToTokenize = "Uyghur content";
             UyghurTokenizer tokenizer = new UyghurTokenizer();
             string[] tokens = tokenizer.GetTokens(textToTokenize);
