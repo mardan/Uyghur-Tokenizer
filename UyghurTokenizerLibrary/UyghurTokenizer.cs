@@ -1,4 +1,5 @@
-﻿// Author: Mardan hoshur (mardan.hoshur@gmail.com)
+﻿// A simple word level tokenizer Libary and Windows tool for Uyghur language
+// Author: Mardan hoshur (mardan.hoshur@gmail.com)
 // Date: 2014-1-14
 using System;
 using System.Collections.Generic;

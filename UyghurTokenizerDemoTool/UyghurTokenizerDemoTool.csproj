@@ -80,7 +80,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\UyghurTokenizer\UyghurTokenizerLibrary.csproj">
+    <ProjectReference Include="..\UyghurTokenizerLibrary\UyghurTokenizerLibrary.csproj">
       <Project>{3d681c2b-24cd-4994-a72d-1ce8ded47979}</Project>
       <Name>UyghurTokenizerLibrary</Name>
     </ProjectReference>
