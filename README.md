@@ -8,9 +8,9 @@ A simple word level tokenizer Libary and Windows tool for Uyghur language | ئۇ
 -------------
 Usage:
 
-            string textToTokenize = ... 
+            string textToTokenize = "Uyghur content";
             UyghurTokenizer tokenizer = new UyghurTokenizer();
-            string[] tokenizer.GetTokens(textToTokenize);
+            string[] tokens = tokenizer.GetTokens(textToTokenize);
 
 or 
 
@@ -18,5 +18,4 @@ or
             IEnumerator<string> iter = GetTokenIterator(inputText);
             while (iter.MoveNext())
                 tokens.Add(iter.Current);
-            return tokens.ToArray();
 -------------
