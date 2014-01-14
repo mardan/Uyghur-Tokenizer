@@ -6,9 +6,17 @@ A simple word level tokenizer for Uyghur (Arabic-based alphabet). This project i
 - A demo tool for tokenizing local text files on your PC. 
 
 
-Using Library
+تېكىست ھۆججەتلەردىكى ئۇيغۇرچە سۆزلەرنى سۈزۈپ ئېلىشقا ئىشلىتىلىدىغان ئاددىي كود ۋە ئەپچىل قۇرال.  تۆۋەندىكىلەر ھازىرلاندى:
+- ئۆزىڭىزنىڭ پروگراممىلىرىدا ئىشلىتەلەيدىغان dll ھۆججىتى (.Net قۇرۇلمىسىنىڭ 2.0 دىن يۇقۇرى نەشرىگە بېقىنىدۇ)
+- بەلگىلەنگەن مۇندەرىجە ئىچىدىكى ھۆججەتلەردىن سۆزلەرنى ئاپتوماتى سۈزۈپ ئالىدىغان ئەپچىل  قۇرال.
+
+
+
+Using Library 
 ---------------
-Add `UyghurTokenizer.dll` as reference in your .Net project.         
+Add `UyghurTokenizer.dll` as reference in your .Net project.      
+
+UyghurTokenizer.dll ھۆججىتنى تۈرىڭىزگە قىستۇرۇپ تۆۋەندىكى ئۇسۇللار  ئىشلىتىڭ.
 
             string textToTokenize = "Uyghur content";
             UyghurTokenizer tokenizer = new UyghurTokenizer();
@@ -26,5 +34,7 @@ Using Demo Tool
 --------------
 
 Please follow the instruction on tool UI.
+
+كۆزنەكتىكى كۆرسەتمىلەر يويىچە مەشغۇلات قىلىڭ.
 
 ![](https://raw2.github.com/mardan/Uyghur-Tokenizer/master/Distribution/Screenshot.png)
