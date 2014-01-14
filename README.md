@@ -1,11 +1,10 @@
-UyghurTokenizer
+Uyghur Tokenizer
 ===============
 
-A simple word level tokenizer Libary and Windows tool for Uyghur language | ئۇيغۇرچە سۆز سۈزۈش كودى ۋە قۇرالى
+A simple word level tokenizer Libary and Windows tool for Uyghur language (Arabic-based alphabet )
 
 
 
--------------
 Usage:
 
 Add UyghurTokenizer.dll as a reference in your .Net project.            
@@ -20,4 +19,3 @@ or
             IEnumerator<string> iter = GetTokenIterator(inputText);
             while (iter.MoveNext())
                 tokens.Add(iter.Current);
--------------
