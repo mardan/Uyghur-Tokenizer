@@ -180,7 +180,7 @@
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(260, 174);
+            this.label3.Location = new System.Drawing.Point(248, 171);
             this.label3.Name = "label3";
             this.label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label3.Size = new System.Drawing.Size(190, 58);
@@ -190,11 +190,11 @@
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(277, 232);
+            this.label4.Location = new System.Drawing.Point(248, 220);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(187, 34);
+            this.label4.Size = new System.Drawing.Size(199, 54);
             this.label4.TabIndex = 1;
-            this.label4.Text = "Tokens will be saved into the file \"sozler.txt\" at application direcotry.";
+            this.label4.Text = "Tokens will be saved into the file \"sozler.txt\" at the application direcotry.";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // cbFreq
