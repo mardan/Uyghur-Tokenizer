@@ -70,7 +70,7 @@ namespace Uyghurdev
             Console.Write(string.Format("{0}Tokenizing started at {1}...", Environment.NewLine, DateTime.Now.ToLongTimeString()));
             this.Enabled = false;
             tokenizeDirectory(this.txtDirectory.Text, extentions.ToArray(), cbSubDirectory.Checked);
-            string resultFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "sozler.txt");
+            string resultFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, string.Format("sozler_{0}.txt", DateTime.Now.ToString("yyyyMMddHHmmss")));
 
              try
             {
@@ -79,7 +79,7 @@ namespace Uyghurdev
                 foreach (var item in _uniqueTokens)
                 {
                     if (addFreq)
-                        lines.Add(item.Key + "\t");
+                        lines.Add(item.Key + "\t"+item.Value);
                     else
                         lines.Add(item.Key);
                 }

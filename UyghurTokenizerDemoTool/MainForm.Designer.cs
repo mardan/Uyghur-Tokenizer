@@ -185,16 +185,17 @@
             this.label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label3.Size = new System.Drawing.Size(190, 58);
             this.label3.TabIndex = 1;
-            this.label3.Text = "سۈزۈلگەن سۆزلەر مەزكۇر پروگرامما ھۆججىتى تۇرۇشلۇق مۇندەرىجىدىكى sozler.txt ناملىق" +
-    " ھۆججەتكە ساقلىنىدۇ .";
+            this.label3.Text = "سۈزۈلگەن سۆزلەر مەزكۇر پروگرامما ھۆججىتى تۇرۇشلۇق مۇندەرىجىدىكى sozler_[t].txt نا" +
+    "ملىق ھۆججەتكە ساقلىنىدۇ .";
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(248, 220);
+            this.label4.Location = new System.Drawing.Point(272, 229);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(199, 54);
+            this.label4.Size = new System.Drawing.Size(163, 54);
             this.label4.TabIndex = 1;
-            this.label4.Text = "Tokens will be saved into the file \"sozler.txt\" at the application direcotry.";
+            this.label4.Text = "Tokens will be saved into the file \"sozler_[t].txt\" at the application direcotry." +
+    "";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // cbFreq
