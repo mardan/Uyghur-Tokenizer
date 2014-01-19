@@ -38,3 +38,6 @@ Please follow the instruction on tool UI.
 كۆزنەكتىكى كۆرسەتمىلەر يويىچە مەشغۇلات قىلىڭ.
 
 ![](https://raw2.github.com/mardan/Uyghur-Tokenizer/master/Distribution/Screenshot.png)
+
+
+Online demo: http://lab.uyghurdev.net/Uyghur-Tokenizer/Default.aspx
