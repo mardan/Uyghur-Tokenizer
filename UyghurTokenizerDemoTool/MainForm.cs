@@ -152,5 +152,16 @@ namespace Uyghurdev
             }
             
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+            System.Diagnostics.Process.Start("http://en.wikipedia.org/wiki/Uyghur_alphabets");
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/mardan/Uyghur-Tokenizer");
+        }
     }
 }
