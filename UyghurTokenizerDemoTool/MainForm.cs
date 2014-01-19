@@ -91,7 +91,7 @@ namespace Uyghurdev
             }
             catch (Exception exp){
                 Console.Write(string.Format(Environment.NewLine + "Tokenizing done at {0}", DateTime.Now.ToLongTimeString()));
-                Console.Write(string.Format(Environment.NewLine + "An error occured when saving the tokens in {0}", resultFile));
+                Console.Write(string.Format(Environment.NewLine + "An error occured when saving the tokens to file {0}", resultFile));
             }
 
             this.Enabled = true;

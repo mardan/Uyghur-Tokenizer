@@ -13,63 +13,13 @@ namespace Uyghurdev
     /// </summary>
     public class UyghurTokenizer
     {
-        /// <summary>
-        /// Berilgen ikki sozning Edit Distance qimmitinining pirsenleshturidu
-        /// </summary>
-        /// <param name="s">Birinchi soz</param>
-        /// <param name="t">Ikkinchi soz</param>
-        /// <returns></returns>
-        private float getEditDistancePers(string s, string t)
-        {
-            int l = s.Length > t.Length ? s.Length : t.Length;
-            int d = getEditDistance(s, t);
-            float db = 1 - ((float)d / l);
-            return (float)Math.Round(db, 5);
-
-        }
-
-        /// <summary>
-        /// Berilgen ikki sozning Edit Distance qimmitini alidu
-        /// </summary>
-        /// <param name="s">Birinchi soz</param>
-        /// <param name="t">Ikkinchi soz</param>
-        /// <returns></returns>
-        private int getEditDistance(string s, string t)
-        {
-            int n = s.Length; //length of s
-            int m = t.Length; //length of t
-            int[,] d = new int[n + 1, m + 1]; // matrix
-            int cost; // cost
-            // Step 1
-            if (n == 0) return m;
-            if (m == 0) return n;
-            // Step 2
-            for (int i = 0; i <= n; d[i, 0] = i++) ;
-            for (int j = 0; j <= m; d[0, j] = j++) ;
-            // Step 3
-            for (int i = 1; i <= n; i++)
-            {
-                //Step 4
-                for (int j = 1; j <= m; j++)
-                {
-                    // Step 5
-                    // Bubolek sue'etni ashurush uchun ozgertildi, Mardan.
-                    //cost = (secondWord.Substring(j - 1, 1) == firstWord.Substring(i - 1, 1) ? 0 : 1);
-                    cost = (t[j - 1] == s[i - 1] ? 0 : 1);
-                    // Step 6
-                    d[i, j] = System.Math.Min(System.Math.Min(d[i - 1, j] + 1, d[i, j - 1] + 1),
-                              d[i - 1, j - 1] + cost);
-                }
-            }
-            // Step 7
-            return d[n, m];
-        }
-
-        private bool[] mark = new bool[256];
+        //this is to mark whether a given char is Uyghur letter (Unicode of a letter - '\u0600' )
+        //Goal is to get higher computation speed (need to be compared with Regex)
+        private bool[] mark = new bool[256]; 
 
         public UyghurTokenizer()
         {
-            string uyghurLetter = "اەبپتجچخدرزژسشغفقكگڭلمنھوۇۆۈۋېىيئ";
+            string uyghurLetter = "اەبپتجچخدرزژسشغفقكگڭلمنھوۇۆۈۋېىيئ";// total 32+1 http://en.wikipedia.org/wiki/Uyghur_alphabets
             for (int i = 0; i < mark.Length; i++)
                 mark[i] = false;
             foreach (var letter in uyghurLetter)
@@ -132,6 +82,30 @@ namespace Uyghurdev
             while (iter.MoveNext())
                 tokens.Add(iter.Current);
             return tokens.ToArray();
+        }
+
+        public string[] GetUniqueTokens(string inputText)
+        {
+            Dictionary<string, bool> tokens = new Dictionary<string, bool>();
+            IEnumerator<string> iter = GetTokenIterator(inputText);
+            while (iter.MoveNext())
+                if (!tokens.ContainsKey(iter.Current))
+                    tokens.Add(iter.Current, true);
+            String[] result = new string[tokens.Count];
+            tokens.Keys.CopyTo(result, 0);
+            return result;
+        }
+
+        public Dictionary<string, int> GetUniqueTokensWithFreq(string inputText)
+        {
+            Dictionary<string, int> tokens = new Dictionary<string, int>();
+            IEnumerator<string> iter = GetTokenIterator(inputText);
+            while (iter.MoveNext())
+                if (tokens.ContainsKey(iter.Current))
+                    tokens[iter.Current] = tokens[iter.Current] + 1;
+                else
+                    tokens.Add(iter.Current, 1);
+            return tokens;
         }
     }
 }
