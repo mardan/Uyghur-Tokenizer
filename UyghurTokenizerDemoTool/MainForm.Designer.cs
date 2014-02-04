@@ -47,6 +47,7 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.cbDocFreq = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -218,7 +219,7 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 454);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 471);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(16, 0, 1, 0);
             this.statusStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -235,7 +236,7 @@
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(11, 410);
+            this.linkLabel1.Location = new System.Drawing.Point(11, 437);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(102, 15);
             this.linkLabel1.TabIndex = 5;
@@ -246,7 +247,7 @@
             // linkLabel2
             // 
             this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Location = new System.Drawing.Point(11, 429);
+            this.linkLabel2.Location = new System.Drawing.Point(11, 456);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(74, 15);
             this.linkLabel2.TabIndex = 5;
@@ -254,14 +255,26 @@
             this.linkLabel2.Text = "Source Code";
             this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
+            // cbDocFreq
+            // 
+            this.cbDocFreq.Checked = true;
+            this.cbDocFreq.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbDocFreq.Location = new System.Drawing.Point(14, 383);
+            this.cbDocFreq.Name = "cbDocFreq";
+            this.cbDocFreq.Size = new System.Drawing.Size(296, 46);
+            this.cbDocFreq.TabIndex = 3;
+            this.cbDocFreq.Text = "سۆزنى ئۆز ئىچىگە ئالغان ھۆججەت سانىغا ئېرىشىش\r\n(Obtain document frerequency)";
+            this.cbDocFreq.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(539, 476);
+            this.ClientSize = new System.Drawing.Size(539, 493);
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.cbDocFreq);
             this.Controls.Add(this.cbFreq);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.groupBox2);
@@ -304,5 +317,6 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.LinkLabel linkLabel2;
+        private System.Windows.Forms.CheckBox cbDocFreq;
     }
 }

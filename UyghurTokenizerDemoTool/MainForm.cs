@@ -16,7 +16,7 @@ namespace Uyghurdev
         [return: MarshalAs(UnmanagedType.Bool)]
         static extern bool AllocConsole();
 
-        private SortedDictionary<string, int> _uniqueTokens = new SortedDictionary<string, int>();
+        private SortedDictionary<string, KeyValuePair<int, int>> _uniqueTokens = new SortedDictionary<string, KeyValuePair<int, int>>();
 
         private UyghurTokenizer tokenizer = new UyghurTokenizer();
 
@@ -63,7 +63,7 @@ namespace Uyghurdev
             foreach (var item in lbExtentions.Items)
                 extentions.Add(item.ToString());
             fileSearchPattern = fileSearchPattern.TrimEnd('|');
-            _uniqueTokens = new SortedDictionary<string, int>();
+            _uniqueTokens = new SortedDictionary<string, KeyValuePair<int, int>>();
 
             AllocConsole();
 
@@ -76,12 +76,16 @@ namespace Uyghurdev
             {
                 List<string> lines = new List<string>();
                 bool addFreq = cbFreq.Checked;
+                 bool addDocFreq = cbDocFreq.Checked;
                 foreach (var item in _uniqueTokens)
                 {
+                    string word = item.Key;
                     if (addFreq)
-                        lines.Add(item.Key + "\t"+item.Value);
-                    else
-                        lines.Add(item.Key);
+                        word += "\t" + item.Value.Key;
+                    if(addDocFreq)
+                        word += "\t" + item.Value.Value;
+
+                    lines.Add(word);
                 }
 
                 File.WriteAllLines(resultFile, lines.ToArray());
@@ -115,7 +119,6 @@ namespace Uyghurdev
                 
             foreach (string fileName in fileEntries)
             {
-
                 tokenizeFile(fileName);
             }
 
@@ -135,13 +138,28 @@ namespace Uyghurdev
                 Console.Write(string.Format("Tokenizing {0}...", fileName));
                 string fileContent = System.IO.File.ReadAllText(fileName);
                 IEnumerator<string> tokenEnumerator = tokenizer.GetTokenIterator(fileContent);
+                Dictionary<string, bool> localUniqueWords = new Dictionary<string, bool>();
                 while (tokenEnumerator.MoveNext())
                 {
                     string word = tokenEnumerator.Current;
                     if (_uniqueTokens.ContainsKey(word))
-                        _uniqueTokens[word] = _uniqueTokens[word] + 1;
+                    {
+                        KeyValuePair<int, int> kvOriginal = _uniqueTokens[word];
+                        if (localUniqueWords.ContainsKey(word))
+                        {
+                            _uniqueTokens[word] = new KeyValuePair<int, int>(kvOriginal.Key + 1, kvOriginal.Value);
+                        }
+                        else
+                        {
+                            _uniqueTokens[word] = new KeyValuePair<int, int>(kvOriginal.Key + 1, kvOriginal.Value + 1);
+                            localUniqueWords.Add(word, true);
+                        }
+                    }
                     else
-                        _uniqueTokens.Add(word, 1);
+                    {
+                        _uniqueTokens.Add(word, new KeyValuePair<int, int>(1, 1));
+                        localUniqueWords.Add(word, true);
+                    }
                 }
 
                 Console.Write("Done!");
